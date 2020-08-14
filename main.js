@@ -1,12 +1,10 @@
 let data = {
   addRecord: function() {
-    let dataSrc = {};
     for (let i = 0; i < arguments.length; i++) {
-      let prop = arguments[i];
-      for (let key in prop) {
-        dataSrc[key] = prop[key];
+      for (let key in arguments[i]) {
+        data[key] = arguments[i][key];
       } 
-    } return Object.assign(data, dataSrc);
+    } return this;
   },     
   p: 600,
   str: 'hello',
